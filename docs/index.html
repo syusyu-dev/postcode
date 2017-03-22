@@ -29,7 +29,7 @@
   };
   
   function postMessageToiOS(postData) {     
-      window.location = "jscall://" + postData;
+      window.location = "jscall://testcall";
   };
   
   var element_layer = document.getElementById('layer');
@@ -78,8 +78,13 @@
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
-        alert(fullRoadAddr);
-        window.postMessageToiOS(fullRoadAddr);
+        
+        var postcode = data.postcode;
+        var zonecode = data.zonecode;
+        var addr = fullRoadAddr;
+        
+        alert("postcode="+postcode+"zonecode="+zonecode+"addr="+addr);
+        window.postMessageToiOS(zonecode);
         
       },
       width : '100%',
