@@ -79,7 +79,7 @@
             addr : fullRoadAddr
         };
         
-        var jsonString = JSON.stringify({post:data.postcode, zonecode : data.zonecode, addr : fullRoadAddr});
+        var jsonString = JSON.stringify({postcode: data.postcode, zonecode: data.zonecode, addr: fullRoadAddr}, null, '\t');
         
         window.postMessageToiOS(jsonString);
       },
