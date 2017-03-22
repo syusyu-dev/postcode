@@ -28,8 +28,8 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToiOS(postData) {
-      window.webkit.messageHandlers.callBackHandler.postMessage(postData);
+  function postMessageToiOS(postData) {     
+      window.location = "jscall://test"
   };
   
   var element_layer = document.getElementById('layer');
