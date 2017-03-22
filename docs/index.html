@@ -73,12 +73,13 @@
           fullRoadAddr += extraRoadAddr;
         }         
       
-        var postcode = data.postcode;
-        var zonecode = data.zonecode;
-        var addr = fullRoadAddr;
-        var postData = 'postcode' + postcode + 'zondecode' + zonecode + 'addr' + addr;
+        var postData = {
+            postcode : data.postcode,
+            zonecode : data.zonecode,
+            addr : fullRoadAddr
+        };
         
-        window.postMessageToiOS(postData);
+        window.postMessageToiOS(fullRoadAddr);
         
       },
       width : '100%',
