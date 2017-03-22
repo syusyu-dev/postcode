@@ -28,8 +28,8 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToiOS(jsonString) {     
-      window.location = "jscall://" + jsonString;
+  function postMessageToiOS(postData) {     
+      window.location = "jscall://" + postData;
   };
   
   var element_layer = document.getElementById('layer');
@@ -76,8 +76,9 @@
         var postcode = data.postcode;
         var zonecode = data.zonecode;
         var addr = fullRoadAddr;
+        var postData = 'postcode=' + postcode + 'zondecode=' + zonecode + 'addr=' + addr;
         
-        window.postMessageToiOS('postcode=' + postcode + 'zondecode=' + zonecode + 'addr=' + addr);
+        window.postMessageToiOS(postData);
         
       },
       width : '100%',
