@@ -72,14 +72,21 @@
         if(fullRoadAddr !== ''){
           fullRoadAddr += extraRoadAddr;
         }
-               
+         
+        function replacer(key, value) {
+          if (typeof value === "string") {
+            return undefined;
+          }
+          return value;
+        }
+        
         var postData = {
             postcode : data.postcode,
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
         
-        var jsonString = JSON.stringify({postcode: data.postcode, zonecode: data.zonecode, addr: fullRoadAddr}, null, '\t');
+        var jsonString = JSON.stringify(postData);
         
         window.postMessageToiOS(jsonString);
       },
