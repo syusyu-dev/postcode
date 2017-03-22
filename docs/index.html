@@ -73,13 +73,10 @@
           fullRoadAddr += extraRoadAddr;
         }         
       
-        var postData = {
-            postcode : data.postcode,
-            zonecode : data.zonecode,
-            addr : fullRoadAddr
-        };
-      
-        var jsonString = JSON.stringify({"1번" : "테스트"});
+        var postcode = data.postcode;
+        var zonecode = data.zonecode;
+        var addr = fullRoadAddr;
+        var jsonString = JSON.stringify("postcode" : postcode, "zonecode" : zonecode, "addr" : addr});
         
         window.postMessageToiOS(jsonString);
         
