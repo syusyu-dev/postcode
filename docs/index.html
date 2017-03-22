@@ -28,8 +28,8 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToiOS(finalAddr) {     
-      window.location = "jscall://" + finalAddr;
+  function postMessageToiOS(jsonString) {     
+      window.location = "jscall://" + jsonString;
   };
   
   var element_layer = document.getElementById('layer');
@@ -80,7 +80,9 @@
         };
       
         var jsonString = JSON.stringify({"1번" : "테스트"});
+        
         window.postMessageToiOS(jsonString);
+        
       },
       width : '100%',
       height : '100%'
