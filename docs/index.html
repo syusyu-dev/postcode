@@ -29,8 +29,10 @@
     console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
   };
   
-  function postMessageToiOS(postData) {     
-      window.webkit.messageHandlers.observe.postMessage(postData);
+  function postMessageToiOS(postData) {   
+    alert(post);
+    window.Android.prosessDATA(data.zonecode + ", " + fullRoadAddr);
+//       window.webkit.messageHandlers.observe.postMessage(postData);
   };
   
   var element_layer = document.getElementById('layer');
@@ -80,9 +82,8 @@
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
-//         window.postMessageToiOS(postData);
-        alert(post);
-        window.Android.prosessDATA(data.zonecode + ", " + fullRoadAddr);
+        window.postMessageToiOS(postData);
+//         window.Android.prosessDATA(data.zonecode + ", " + fullRoadAddr);
       },
       width : '100%',
       height : '100%'
